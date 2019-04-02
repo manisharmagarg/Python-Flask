@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+{% block title %}send time{% endblock %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <heading>Choose send time</heading>
+    <div class="col-sm-12 col-md-12 well" id="content" style="margin:18px auto 35px auto; height: 100vh;">
+
+            <form method="POST" role="form">
+                {% if test_variable == 'send_time' %}
+                {% if ab_campaign_count == '3' %}
+
+                <p style="font-size:12px;">Send time 1</p>
+                <div class="form-group">
+                    <div class="col-xs-5 date" style="width:190px;float:left;padding-left: 0px;">
+                        <div class="input-group input-append date" id="datePicker">
+
+                            <input type="text" class="form-control" name="first_date" required/>
+                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+
+                    <select name="first_hours"  class="form-control" required="required" style="width:63px; float:left;width:60px;float:left;">
+                        {% for hour in hours %}
+                        <option value="{{ hour }}">{{ hour }}</option>
+                        {% endfor %}
+                    </select>
+                    <label style="float:left;margin-left: 10px;margin-top: 5px;">:</label>
+                    <select name="first_minutes"  class="form-control" required="required" style="width:63px; float:left; margin-left:10px;">
+                        {% for min in mins %}
+                        <option value="{{ min }}">{{ min }}</option>
+                        {% endfor %}
+
+                    </select>
+                    <select name="first_time_zone"  class="form-control" required="required" style="width:80px; float:left; margin-left:10px;">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <br><br>
+                </div>
+                <p style="font-size:12px;">Send time 2</p>
+                <div class="form-group">
+                    <div class="col-xs-5 date" style="width:190px;float:left;padding-left: 0px;">
+                        <div class="input-group input-append date" id="datePicker1">
+
+                            <input type="text" class="form-control" name="second_date" required/>
+                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                    <select name="second_hours"  class="form-control" required="required" style="width:63px; float:left;width:60px;float:left;">
+                        {% for hour in hours %}
+                        <option value="{{ hour }}">{{ hour }}</option>
+                        {% endfor %}
+
+                    </select>
+                    <label style="float:left;margin-left: 10px;margin-top: 5px;">:</label>
+                    <select name="second_minutes"  class="form-control" required="required" style="width:63px; float:left; margin-left:10px;">
+                        {% for min in mins %}
+                        <option value="{{ min }}">{{ min }}</option>
+                        {% endfor %}
+
+                    </select>
+                    <select name="second_time_zone"  class="form-control" required="required" style="width:80px; float:left; margin-left:10px;">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <br><br>
+                </div>
+
+                <p style="font-size:12px;">Send time 3</p>
+                <div class="form-group">
+                    <div class="col-xs-5 date" style="width:190px;float:left;padding-left: 0px;">
+                        <div class="input-group input-append date" id="datePicker2">
+
+                            <input type="text" class="form-control" name="third_date" required/>
+                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+
+                    <select name="third_hours"  class="form-control" required="required" style="width:63px; float:left;width:60px;float:left;">
+                        {% for hour in hours %}
+                        <option value="{{ hour }}">{{ hour }}</option>
+                        {% endfor %}
+                    </select>
+                    <label style="float:left;margin-left: 10px;margin-top: 5px;">:</label>
+                    <select name="third_minutes"  class="form-control" required="required" style="width:63px; float:left; margin-left:10px;">
+                        {% for min in mins %}
+                        <option value="{{ min }}">{{ min }}</option>
+                        {% endfor %}
+
+                    </select>
+                    <select name="third_time_zone"  class="form-control" required="required" style="width:80px; float:left; margin-left:10px;">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select><br><br><br><br><br><br><br>
+                </div>
+                {% elif ab_campaign_count == '2' %}
+                <p style="font-size:12px;">Send time 1</p>
+                <div class="form-group">
+                    <div class="col-xs-5 date" style="width:190px;float:left;padding-left: 0px;">
+                        <div class="input-group input-append date" id="datePicker3">
+
+                            <input type="text" class="form-control" name="first_date" required/>
+                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+
+                    <select name="first_hours"  class="form-control" required="required" style="width:63px; float:left;width:60px;float:left;">
+                        {% for hour in hours %}
+                        <option value="{{ hour }}">{{ hour }}</option>
+                        {% endfor %}
+                    </select>
+                    <label style="float:left;margin-left: 10px;margin-top: 5px;">:</label>
+                    <select name="first_minutes"  class="form-control" required="required" style="width:63px; float:left; margin-left:10px;">
+                        {% for min in mins %}
+                        <option value="{{ min }}">{{ min }}</option>
+                        {% endfor %}
+
+                    </select>
+                    <select name="first_time_zone"  class="form-control" required="required" style="width:80px; float:left; margin-left:10px;">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <br><br>
+                </div>
+                <p style="font-size:12px;">Send time 2</p>
+                <div class="form-group">
+                    <div class="col-xs-5 date" style="width:190px;float:left;padding-left: 0px;">
+                        <div class="input-group input-append date" id="datePicker4">
+
+                            <input type="text" class="form-control" name="second_date" required/>
+                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                    <select name="second_hours"  class="form-control" required="required" style="width:63px; float:left;width:60px;float:left;">
+                        {% for hour in hours %}
+                        <option value="{{ hour }}">{{ hour }}</option>
+                        {% endfor %}
+
+                    </select>
+                    <label style="float:left;margin-left: 10px;margin-top: 5px;">:</label>
+                    <select name="second_minutes"  class="form-control" required="required" style="width:63px; float:left; margin-left:10px;">
+                        {% for min in mins %}
+                        <option value="{{ min }}">{{ min }}</option>
+                        {% endfor %}
+
+                    </select>
+                    <select name="second_time_zone"  class="form-control" required="required" style="width:80px; float:left; margin-left:10px;">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <br><br><br><br><br><br><br>
+                </div>
+                {% endif %}
+                {% else %}
+                    <p style="font-size:12px;">Send time 1</p>
+                    <div class="form-group">
+                        <div class="col-xs-5 date" style="width:190px;float:left;padding-left: 0px;">
+                            <div class="input-group input-append date" id="datePicker">
+
+                                <input type="text" class="form-control" name="first_date" required/>
+                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                        </div>
+
+                        <select name="first_hours"  class="form-control" required="required" style="width:63px; float:left;width:60px;float:left;">
+                            {% for hour in hours %}
+                            <option value="{{ hour }}">{{ hour }}</option>
+                            {% endfor %}
+                        </select>
+                        <label style="float:left;margin-left: 10px;margin-top: 5px;">:</label>
+                        <select name="first_minutes"  class="form-control" required="required" style="width:63px; float:left; margin-left:10px;">
+                            {% for min in mins %}
+                            <option value="{{ min }}">{{ min }}</option>
+                            {% endfor %}
+
+                        </select>
+                        <select name="first_time_zone"  class="form-control" required="required" style="width:80px; float:left; margin-left:10px;">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                        <br><br>
+                    </div>
+                {% endif %}
+
+                <div class="form-group" style="text-align: center;margin-top:145px;">
+                    <a href="/campaigns/" class="btn btn-back">
+                        <p style="margin-top:3px;">Cancel</p></a>
+                    <button type="submit" class="btn-save btn_campaign">Save & Continue</button>
+                </div>
+            </form>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+$(document).ready(function() {
+    $('#datePicker').
+    datepicker({
+        format: 'MM dd yyyy',
+        autoclose: true
+     })
+     $('#datePicker1').
+    datepicker({
+        format: 'MM dd yyyy',
+        autoclose: true
+     })
+    $('#datePicker2').
+    datepicker({
+        format: 'MM dd yyyy',
+        autoclose: true
+     })
+     $('#datePicker3').
+    datepicker({
+        format: 'MM dd yyyy',
+        autoclose: true
+     })
+     $('#datePicker4').
+    datepicker({
+        format: 'MM dd yyyy',
+        autoclose: true
+     })
+});
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+
+{% endblock %}
